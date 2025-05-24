@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
-
 const page = () => {
   return (
     <>
-      <div className="text-6xl">Home Page</div>
+      <div className="my-24 text-6xl">Home Page</div>
     </>
   );
 };
