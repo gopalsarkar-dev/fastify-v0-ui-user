@@ -1,3 +1,4 @@
+import Nave from "@/components/Header/Nave";
 import "./globals.css";
 
 type RootLayoutProviderProps = {
@@ -8,7 +9,8 @@ const RootLayout = ({ children }: RootLayoutProviderProps) => {
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <Nave />
+        <main className="mx-auto flex max-w-5xl px-6">{children}</main>
       </body>
     </html>
   );
