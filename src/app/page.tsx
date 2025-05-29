@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => ({
+  title: "User | AllUsers",
+  description: "",
+});
+
 const page = () => {
   return (
     <>

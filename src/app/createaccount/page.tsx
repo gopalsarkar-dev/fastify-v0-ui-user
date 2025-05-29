@@ -1,11 +1,16 @@
 import UserProfileFrom from "@/components/user/UserProfileFrom";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => ({
+  title: "User | CreateAccount",
+  description: "",
+});
 
 const page = () => {
   return (
     <>
       <div className="grid h-screen w-full place-items-center">
         <UserProfileFrom />
-        {/* <div className="text-xl font-bold">UserAccount</div> */}
       </div>
     </>
   );
