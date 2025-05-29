@@ -1,8 +1,11 @@
+import UserProfileFrom from "@/components/user/UserProfileFrom";
+
 const page = () => {
   return (
     <>
       <div className="grid h-screen w-full place-items-center">
-        <div className="text-xl font-bold">UserAccount</div>
+        <UserProfileFrom />
+        {/* <div className="text-xl font-bold">UserAccount</div> */}
       </div>
     </>
   );
