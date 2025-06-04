@@ -1,4 +1,6 @@
+import UserCardMap from "@/components/UserCardMap";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const generateMetadata = (): Metadata => ({
   title: "User | AllUsers",
@@ -8,7 +10,9 @@ export const generateMetadata = (): Metadata => ({
 const page = () => {
   return (
     <>
-      <div className="my-24 text-6xl">Home Page</div>
+      <Suspense fallback={<div className="text-2xl font-bold">Loding...</div>}>
+        <UserCardMap />
+      </Suspense>
     </>
   );
 };
