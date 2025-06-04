@@ -11,5 +11,5 @@ export const userSchema = z.object({
     .string()
     .toLowerCase()
     .endsWith(".com", { message: "Only .com allowed" }),
-  type: z.string().min(1, { message: "Gender Must be required" }),
+  gender: z.string().min(1, { message: "Gender Must be required" }),
 });

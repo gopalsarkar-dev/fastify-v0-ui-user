@@ -16,17 +16,26 @@ import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { UserType } from "@/lib/type";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { userSchema } from "@/lib/zodSchema";
+import createNewUser from "../controllers/hooks/createNewUser";
+import { toast } from "react-toastify";
 
 const UserProfileFrom = () => {
   const uFrom = useForm<UserType>({
-    defaultValues: { email: "", first_name: "", last_name: "", type: "" },
+    defaultValues: { email: "", first_name: "", last_name: "", gender: "male" },
     resolver: zodResolver(userSchema),
     mode: "all",
   });
 
-  const handleSubmit = (uInfo: UserType) => {
-    console.log(uInfo);
-    uFrom.reset();
+  const handleSubmit = async (uInfo: UserType) => {
+    const { message, success } = await createNewUser(uInfo);
+    if (!success) {
+      toast.error(message);
+    }
+
+    if (success) {
+      toast.success(message);
+      uFrom.reset();
+    }
   };
 
   return (
@@ -81,7 +90,7 @@ const UserProfileFrom = () => {
               />
               <FormField
                 control={uFrom.control}
-                name="type"
+                name="gender"
                 render={({ field }) => (
                   <FormItem>
                     <RadioGroup
