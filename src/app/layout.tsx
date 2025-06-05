@@ -12,7 +12,9 @@ const RootLayout = ({ children }: RootLayoutProviderProps) => {
       <body>
         <Nave />
         <ReactToastify />
-        <main className="mx-auto flex max-w-5xl px-6">{children}</main>
+        <main className="container mx-auto max-w-6xl px-6 py-4">
+          {children}
+        </main>
       </body>
     </html>
   );

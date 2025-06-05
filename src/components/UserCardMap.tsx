@@ -19,7 +19,7 @@ const UserCardMap = async () => {
   }
   return (
     <>
-      <div className="grid grid-cols-3 gap-6 pt-24 pb-8">
+      <div className="grid grid-cols-1 place-items-center gap-5 pt-24 pb-6 sm:grid-cols-3">
         {data?.map((item, index) => {
           return <DisplayUsers key={index} uInfo={item} />;
         })}

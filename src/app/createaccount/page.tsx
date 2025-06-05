@@ -9,7 +9,7 @@ export const generateMetadata = (): Metadata => ({
 const page = () => {
   return (
     <>
-      <div className="grid h-screen w-full place-items-center">
+      <div className="grid h-[95dvh] place-items-center">
         <UserProfileFrom />
       </div>
     </>

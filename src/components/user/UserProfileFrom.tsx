@@ -1,6 +1,12 @@
 "use client";
 
+import { UserType } from "@/lib/type";
+import { userSchema } from "@/lib/zodSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import createNewUser from "../controllers/hooks/createNewUser";
+import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import {
   Form,
@@ -11,13 +17,7 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { Button } from "../ui/button";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { UserType } from "@/lib/type";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { userSchema } from "@/lib/zodSchema";
-import createNewUser from "../controllers/hooks/createNewUser";
-import { toast } from "react-toastify";
 
 const UserProfileFrom = () => {
   const uFrom = useForm<UserType>({

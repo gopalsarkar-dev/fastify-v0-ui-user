@@ -11,7 +11,7 @@ const createNewUser = async (uInfo: UserType) => {
       })
       .json<UserObjType[]>();
 
-    const existingUser = req.filter((email) => email.email === uInfo.email);
+    const existingUser = req.find((email) => email.email === uInfo.email);
 
     if (existingUser) {
       return {
