@@ -1,3 +1,4 @@
+import SketetionDisplay from "@/components/skeletion/SketetionDisplay";
 import UserCardMap from "@/components/UserCardMap";
 import { Metadata } from "next";
 import { Suspense } from "react";
@@ -10,7 +11,7 @@ export const generateMetadata = (): Metadata => ({
 const page = () => {
   return (
     <>
-      <Suspense fallback={<div className="text-2xl font-bold">Loding...</div>}>
+      <Suspense fallback={<SketetionDisplay />}>
         <UserCardMap />
       </Suspense>
     </>
