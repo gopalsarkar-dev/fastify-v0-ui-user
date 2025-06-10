@@ -1,5 +1,13 @@
+"use client";
 import { UserObjType } from "@/lib/type";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 type usersProps = {
   uInfo: UserObjType;
@@ -23,6 +31,11 @@ const DisplayUsers = ({ uInfo }: usersProps) => {
             Gender : {uInfo.gender}
           </div>
         </CardContent>
+        <CardFooter className="flex gap-6">
+          <Button className="w-full cursor-pointer" size={"lg"}>
+            Edite
+          </Button>
+        </CardFooter>
       </Card>
     </>
   );

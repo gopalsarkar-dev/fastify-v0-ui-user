@@ -3,6 +3,7 @@ import DisplayUsers from "./DisplayUsers";
 
 const UserCardMap = async () => {
   const { data } = await allUsers();
+  console.log(data);
 
   if (data === null) {
     return;
@@ -20,8 +21,8 @@ const UserCardMap = async () => {
   return (
     <>
       <div className="grid grid-cols-1 place-items-center gap-5 pt-24 pb-6 sm:grid-cols-3">
-        {data?.map((item, index) => {
-          return <DisplayUsers key={index} uInfo={item} />;
+        {data.map((item) => {
+          return <DisplayUsers key={item.uId} uInfo={item} />;
         })}
       </div>
     </>

@@ -2,7 +2,7 @@ import { z } from "zod";
 import { userSchema } from "./zodSchema";
 
 export type UserObjType = {
-  id: string;
+  uId: string;
 
   first_name: string;
 
