@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "rimraf .next && next dev --turbopack",
+    "build": "next lint && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prod": "rimraf .next && next lint && next build && next start"
   },
   "dependencies": {
     "@hookform/resolvers": "5.0.1",
@@ -21,7 +22,8 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-hook-form": "7.56.4",
-    "react-toastify": "^11.0.5",
+    "react-toastify": "11.0.5",
+    "rimraf": "6.0.1",
     "tailwind-merge": "3.3.0",
     "zod": "3.25.32"
   },
